@@ -4,6 +4,13 @@ body {
 }
 
 #section_1 {
-    text-color: #FFFFFF;
     background-color: #000000;
+}
+
+#section_1 h1 {
+    color: #FFFFFF;
+}
+
+#section_1 p {
+    color: #FFFFFF;
 }
