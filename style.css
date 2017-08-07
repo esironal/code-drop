@@ -14,3 +14,27 @@ body {
 #section_1 p {
     color: #FFFFFF;
 }
+
+#text_1 h1 {
+    text-align: left;
+}
+
+#text_1 p {
+    text-align: left;
+}
+
+#text_2 h1 {
+    text-align: right;
+}
+
+#text_2 p {
+    text-align: right;
+}
+
+#text_3 h1 {
+    text-align: left;
+}
+
+#text_3 p {
+    text-align: left;
+}
