@@ -11,7 +11,9 @@
                 <h1>Codr Editor</h1>
                 <hr>
             </div>
-            <div id="blocklyDiv" style="height: 790px;">
+            <td id="blocklyArea">
+            </td>
+            <div id="blocklyDiv" style="position: absolute;">
                 <script src="blockly/blockly_compressed.js"></script>
                 <script src="blockly/blocks_compressed.js"></script>
                 <script src="blockly/msg/js/en.js"></script>
@@ -98,9 +100,29 @@
                     <category name="Variables" colour="330" custom="VARIABLE"></category>
                 </xml>
                 <script>
-                    // Adding Blockly to the workspace
-                    var workspace = Blockly.inject('blocklyDiv',
-                    {toolbox: document.getElementById('toolbox')});
+                    var blocklyArea = document.getElementById('blocklyArea');
+                    var blocklyDiv = document.getElementById('blocklyDiv');
+                    var workspace = Blockly.inject(blocklyDiv,
+                        {toolbox: document.getElementById('toolbox')});
+                    var onresize = function(e) {
+                    // Compute the absolute coordinates and dimensions of blocklyArea.
+                    var element = blocklyArea;
+                    var x = 0;
+                    var y = 0;
+                    do {
+                        x += element.offsetLeft;
+                        y += element.offsetTop;
+                        element = element.offsetParent;
+                    } while (element);
+                        // Position blocklyDiv over blocklyArea.
+                        blocklyDiv.style.left = x + 'px';
+                        blocklyDiv.style.top = y + 'px';
+                        blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+                        blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+                    };
+                    window.addEventListener('resize', onresize, false);
+                    onresize();
+                    Blockly.svgResize(workspace);
                 </script>
             </div>
     </body>
