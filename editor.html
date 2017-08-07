@@ -7,15 +7,19 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
     </head>
     <body>
-        <center>
+            <div id="header">
+                <h1>Codr</h1>
+                <hr>
+            </div>
             <div id="blocklyDiv" style="height: 790px;">
                 <script src="blockly/blockly_compressed.js"></script>
                 <script src="blockly/blocks_compressed.js"></script>
                 <script src="blockly/msg/js/en.js"></script>
                 <script src="blockly/javascript_compressed.js"></script>
-                <h1>Codr</h1>
-                <button onclick="generateAndRunJS()">Run</button>
-                <hr></hr>
+                <center>
+                    <button onclick="generateAndRunJS()">Run</button>
+                </center>
+                <br>
                 <script>
                     function generateAndRunJS() {
                         // Running Blockly code so far
@@ -102,6 +106,13 @@
                     {toolbox: document.getElementById('toolbox')});
                 </script>
             </div>
-        </center>
+            <div id="footer">
+                <center>
+                    <hr>
+                    <p>
+                    Copyright 2017 by Codr.
+                    </p>
+                </center>
+            </div>
     </body>
 </html>
