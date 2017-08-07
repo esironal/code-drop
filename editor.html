@@ -8,7 +8,7 @@
     </head>
     <body>
             <div id="header">
-                <h1>Codr</h1>
+                <h1>Codr Editor</h1>
                 <hr>
             </div>
             <div id="blocklyDiv" style="height: 790px;">
@@ -16,10 +16,7 @@
                 <script src="blockly/blocks_compressed.js"></script>
                 <script src="blockly/msg/js/en.js"></script>
                 <script src="blockly/javascript_compressed.js"></script>
-                <center>
-                    <button onclick="generateAndRunJS()">Run</button>
-                </center>
-                <br>
+                <button onclick="generateAndRunJS()">Run</button>
                 <script>
                     function generateAndRunJS() {
                         // Running Blockly code so far
@@ -105,14 +102,6 @@
                     var workspace = Blockly.inject('blocklyDiv',
                     {toolbox: document.getElementById('toolbox')});
                 </script>
-            </div>
-            <div id="footer">
-                <center>
-                    <hr>
-                    <p>
-                    Copyright 2017 by Codr.
-                    </p>
-                </center>
             </div>
     </body>
 </html>
