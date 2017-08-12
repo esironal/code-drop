@@ -15,6 +15,9 @@
                 <button onclick="generateAndRunJS()">Run Code</button>
                 <script>
                     function generateAndRunJS() {
+                        // Plays the click sound
+                        clickSound.play();
+                        
                         // Running Blockly code so far
                         Blockly.JavaScript.addReservedWords('code');
                         var code = Blockly.JavaScript.workspaceToCode(workspace);
@@ -24,6 +27,10 @@
                             alert(e);
                         }
                     }
+                </script>
+                <script>
+                    // Declares the click sound
+                    var clickSound = new Audio('blockly/media/click.ogg');
                 </script>
                 <xml id="toolbox" style="display: none">
                     <category name="Count" colour="120">
