@@ -58,30 +58,36 @@ body {
 
 #back {
 	transform: translateZ(-100px) rotateY(180deg);
+	background-color: #000000;
 }
 
 #right {
 	transform: rotateY(-270deg) translateX(100px);
 	transform-origin: top right;
+	background-color: #000000;
 }
 
 #left {
 	transform: rotateY(270deg) translateX(-100px);
 	transform-origin: center left;
+	background-color: #000000;
 }
 
 #top {
 	transform: rotateX(-90deg) translateY(-100px);
 	transform-origin: top center;
+	background-color: #000000;
 }
 
 #bottom {
 	transform: rotateX(90deg) translateY(100px);
 	transform-origin: bottom center;
+	background-color: #000000;
 }
 
 #front {
 	transform: translateZ(100px);
+	background-color: #000000;
 }
 
 @keyframes spin {
