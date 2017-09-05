@@ -8,8 +8,8 @@
         <script src="processing.js"></script>
     </head>
     <body>
-        <center>
-            <div id="main" style="position: fixed; height: 100%; width: 100%; top: 0; left 0;">
+        <div id="main" style="position: fixed; height: 100%; width: 100%; top: 0; left 0;">
+            <div id="blockly">
                 <script src="blockly/blockly_compressed.js"></script>
                 <script src="blockly/blocks_compressed.js"></script>
                 <script src="blockly/msg/js/en.js"></script>
@@ -104,10 +104,10 @@
                     <category name="Variables" colour="330" custom="VARIABLE"></category>
                 </xml>
                 <script>
-                    var workspace = Blockly.inject('main',
+                    var workspace = Blockly.inject('blockly',
                         {toolbox: document.getElementById('toolbox')});
                 </script>
             </div>
-        </center>
+        </div>
     </body>
 </html>
