@@ -3,11 +3,34 @@
 	<head>
 		<title>Codr</title>
 		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="menu.css">
 		<link rel="icon" href="/blockly/appengine/favicon.ico" type="image/icon"> 
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 		<script src="processing.js"></script>
   	</head>
 	<body>
+		<div class="menu-wrap">
+    			<nav class="menu">
+       			  <ul class="clearfix">
+            		    <li><a href="#">Home</a></li>
+                            <li>
+                            <a href="#">Apps <span class="arrow">&#9660;</span></a>
+                            <ul class="sub-menu">
+                              <li><a href="#">Codr for Mobile <span class="arrow">&#9660;</span></a>
+				    <ul class="sub-menu">
+					    <li><a href="/apps#mobile-android">Codr for Android</a></li>
+					    <li><a href="/apps#mobile-ios">Codr for iOS</a></li>
+				    </ul>
+			      </li>
+                              <li><a href="/apps#desktop">Codr for Desktop</a></li>
+                              <li><a href="/apps#web">Codr for Web</a></li>
+                            </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
 		<div id="header">
 			<center>
 				<h1>Codr</h1>
