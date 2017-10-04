@@ -1,8 +1,11 @@
+/* Body */
+
 body {
     background-color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
 }
 
+/* Section 1 */
 #section_1 {
     background-color: #000000;
 }
@@ -14,6 +17,8 @@ body {
 #section_1 p {
     color: #FFFFFF;
 }
+
+/* Section 2 */
 
 #text_1 h1 {
     text-align: left;
