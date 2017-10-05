@@ -44,3 +44,9 @@ body {
 #text_3 p {
     text-align: left;
 }
+
+/* Canvas */
+
+#canvas_div {
+    background-color: #000000;
+}
