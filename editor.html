@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Header -->
     <head>
+        <!-- Title -->
         <title>Codr</title>
-        <link rel="stylesheet" href="style.css">
+        
+        <!-- Favicon -->
         <link rel="icon" href="/blockly/appengine/favicon.ico" type="image/icon"> 
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <script src="processing.js"></script>
+        
+        <!-- Scripts -->
+        <script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/blocks_compressed.js"></script>
+        <script src="blockly/msg/js/en.js"></script>
+        <script src="blockly/javascript_compressed.js"></script>
     </head>
+    
+    <!-- Body -->
     <body>
-            <div id="main" style="position: fixed; height: 100%; width: 100%; top: 0; left 0;">
-                <script src="blockly/blockly_compressed.js"></script>
-                <script src="blockly/blocks_compressed.js"></script>
-                <script src="blockly/msg/js/en.js"></script>
-                <script src="blockly/javascript_compressed.js"></script>
+        <!-- Main Code -->
+        <div id="main" style="position: fixed; height: 100%; width: 100%; top: 0; left 0;">
+                <!-- Run Code Button -->
                 <button onclick="generateAndRunJS()">Run Code</button>
+                
+                <!-- Run Code Script -->
                 <script>
                     function generateAndRunJS() {
-                        // Plays the click sound
-                        clickSound.play();
-                        
                         // Running Blockly code so far
                         Blockly.JavaScript.addReservedWords('code');
                         var code = Blockly.JavaScript.workspaceToCode(workspace);
@@ -29,14 +41,10 @@
                         }
                     }
                 </script>
-                <script>
-                    // Declares the click sound
-                    var clickSound = new Audio('blockly/media/click.ogg');
-                </script>
+                
+                <!-- Toolbox -->
                 <xml id="toolbox" style="display: none">
-                    <category name="Controls" colour="220">
-                        <button text="Run Code" onclick="generateAndRunJS()"></button>
-                    </category>
+                    <!-- Count -->
                     <category name="Count" colour="120">
                         <block type="controls_repeat_ext"></block>
                         <block type="controls_repeat"></block>
@@ -45,12 +53,16 @@
                         <block type="controls_forEach"></block>
                         <block type="controls_flow_statements"></block>
                     </category>
+                    
+                    <!-- Color -->
                     <category name="Color" colour="20">
                         <block type="colour_picker"></block>
                         <block type="colour_random"></block>
                         <block type="colour_rgb"></block>
                         <block type="colour_blend"></block>
                     </category>
+                    
+                    <!-- Logic -->
                     <category name="Logic" colour="210">
                         <block type="controls_if"></block>
                         <block type="logic_compare"></block>
@@ -60,6 +72,8 @@
                         <block type="logic_null"></block>
                         <block type="logic_ternary"></block>
                     </category>
+                    
+                    <!-- Lists -->
                     <category name="Lists" colour="260">
                         <block type="lists_create_empty"></block>
                         <block type="lists_create_with"></block>
@@ -72,6 +86,8 @@
                         <block type="lists_getSublist"></block>
                         <block type="lists_sort"></block>
                     </category>
+                    
+                    <!-- Math -->
                     <category name="Math" colour="230">
                         <block type="math_number"></block>
                         <block type="math_arithmetic"></block>
@@ -86,6 +102,8 @@
                         <block type="math_random_int"></block>
                         <block type="math_random_float"></block>
                     </category>
+                    
+                    <!-- Text -->
                     <category name="Text" colour="150">
                         <block type="text"></block>
                         <block type="text_join"></block>
@@ -102,9 +120,15 @@
                         <block type="text_prompt"></block>
                     </category>
                     <sep></sep>
+                    
+                    <!-- Functions -->
                     <category name="Functions" colour="290" custom="PROCEDURE"></category>
+                    
+                    <!-- Variables -->
                     <category name="Variables" colour="330" custom="VARIABLE"></category>
                 </xml>
+                
+                <!-- Blockly Injection Script -->
                 <script>
                     var workspace = Blockly.inject('main',
                         {toolbox: document.getElementById('toolbox')});
