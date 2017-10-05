@@ -50,3 +50,7 @@ body {
 #canvas_div {
     background-color: #000000;
 }
+
+canvas {
+    background-color: #FFFFFF;
+}
