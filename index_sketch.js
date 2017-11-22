@@ -1,3 +1,9 @@
+// This is a sketch for the homepage.
+
+function setup() {
+  createCanvas(640, 480);
+}
+
 function draw() {
   if (mouseIsPressed) {
     fill(0);
