@@ -52,5 +52,5 @@ body {
 }
 
 canvas {
-    background-color: #FFFFFF;
+    float: left;
 }
