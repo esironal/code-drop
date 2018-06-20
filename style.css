@@ -48,6 +48,9 @@ body {
 /* Canvas */
 
 #canvas_div {
-    float: right;
+    float: left;
 }
 
+#injectionDiv {
+    float: right;
+}
