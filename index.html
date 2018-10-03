@@ -1,80 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<!-- Header -->
-	<head>
-		<!-- Title -->
-		<title>codr</title>
-		
-		<!-- Favicon -->
-		<link rel="icon" href="/blockly/appengine/favicon.ico" type="image/icon"> 
-		
-		<!-- Stylesheets -->
-		<link rel="stylesheet" href="style.css">
-		
-		<!-- Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		
-		<!-- p5.js Scripts -->
-		<script src="p5/p5.min.js"></script>
-        	<script src="p5/p5.dom.min.js"></script>
-        	<script src="p5/p5.sound.min.js"></script>
-  	</head>
-	
-	<!-- Body -->
-	<body>
-		<!-- Header -->
-		<div id="header">
-			<center>
-				<h1>codr</h1>
-	 			<hr>
-			</center>
-		</div>
-		
-		<!-- Section 1 -->
-		<div id="section_1">
-			<center>
-				<br>
-				<h1>codr has moved on</h1>
-				<p>
-				codr is no longer an active service. It can still be used, but it has now been replaced with Creatrix.<a href="/discontinue.html">Learn More</a> <a href="https://codrproject.github.io/editor.html">Go to editor!</a>
-				</p>
-				<br>
-			</center>
-		</div>
-		
-		<!-- Section 2 -->
-		<div id="section_2">
-			<div id="text_1">
-				<h1>easy to use</h1>
-				<p>
-				Just drag and drop blocks to code. Easy, right?
-				</p>
-			</div>
-			<div id="text_2">
-				<h1>open source</h1>
-				<p>
-				If you REALLY know how to code, you can create your own version of codr, or help code the project, because it is open source under the Apache License 2.0. 
-				</p>
-			</div>
-			<div id="text_3">
-				<h1>yes, it's free</h1>
-				<p>
-				Yep, you thought it was paid for all of this! You were wrong! It's free! We think to learn to code, you should do it for no cost no matter what.
-				</p>
-			</div>
-		</div>
-		
-		<!-- Footer -->
-		<div id="footer">
-			<hr>
-			<center>
-				<p>
-				Copyright 2017 by codr.
-				</p>
-				<p>
-					Also check out <a href="worldsgame.github.io">worlds</a>!
-				</p>
-			</center>
-		</div>
-	</body>
+    <!-- Header -->
+    <head>
+        <!-- Title -->
+        <title>codr</title>
+        
+        <!-- Favicon -->
+        <link rel="icon" href="/blockly/appengine/favicon.ico" type="image/icon"> 
+        
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        
+        <!-- Blockly Scripts -->
+        <script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/blocks_compressed.js"></script>
+        <script src="blockly/javascript_compressed.js"></script>
+        <script src="blockly/msg/js/en.js"></script>
+        
+        <!-- p5.js Scripts -->
+        <script src="p5/p5.min.js"></script>
+        <script src="p5/p5.dom.min.js"></script>
+        <script src="p5/p5.sound.min.js"></script>
+    </head>
+    
+    <!-- Body -->
+    <body>
+        <!-- Main Code -->
+        <div id="main" style="position: fixed; height: 100%; width: 60%; top: 0; left: 0;">
+                <!-- Run Code Script -->
+                <script>
+                    function generateAndRunJS() {
+                        // Running Blockly code so far
+                        Blockly.JavaScript.addReservedWords('code');
+                        var code = Blockly.JavaScript.workspaceToCode(workspace);
+                        try {
+                            eval(code);
+                        } catch (e) {
+                            alert(e);
+                        }
+                    }
+                </script>
+                
+                <!-- Canvas -->
+                <div id="canvas_div"></div>
+            
+                <!-- Canvas Script -->
+                <script src="canvas_setup.js"></script>
+            
+                <!-- Toolbox -->
+                <xml id="toolbox" style="display: none;">
+                    <!-- Count -->
+                    <category name="count" colour="120">
+                        <block type="controls_repeat_ext"></block>
+                        <block type="controls_repeat"></block>
+                        <block type="controls_whileUntil"></block>
+                        <block type="controls_for"></block>
+                        <block type="controls_forEach"></block>
+                        <block type="controls_flow_statements"></block>
+                    </category>
+                    
+                    <!-- Color -->
+                    <category name="color" colour="20">
+                        <block type="colour_picker"></block>
+                        <block type="colour_random"></block>
+                        <block type="colour_rgb"></block>
+                        <block type="colour_blend"></block>
+                    </category>
+                    
+                    <!-- Logic -->
+                    <category name="logic" colour="210">
+                        <block type="controls_if"></block>
+                        <block type="logic_compare"></block>
+                        <block type="logic_operation"></block>
+                        <block type="logic_negate"></block>
+                        <block type="logic_boolean"></block>
+                        <block type="logic_null"></block>
+                        <block type="logic_ternary"></block>
+                    </category>
+                    
+                    <!-- Lists -->
+                    <category name="lists" colour="260">
+                        <block type="lists_create_empty"></block>
+                        <block type="lists_create_with"></block>
+                        <block type="lists_repeat"></block>
+                        <block type="lists_length"></block>
+                        <block type="lists_isEmpty"></block>
+                        <block type="lists_indexOf"></block>
+                        <block type="lists_getIndex"></block>
+                        <block type="lists_setIndex"></block>
+                        <block type="lists_getSublist"></block>
+                        <block type="lists_sort"></block>
+                    </category>
+                    
+                    <!-- Math -->
+                    <category name="math" colour="230">
+                        <block type="math_number"></block>
+                        <block type="math_arithmetic"></block>
+                        <block type="math_single"></block>
+                        <block type="math_trig"></block>
+                        <block type="math_constant"></block>
+                        <block type="math_number_property"></block>
+                        <block type="math_round"></block>
+                        <block type="math_on_list"></block>
+                        <block type="math_modulo"></block>
+                        <block type="math_constrain"></block>
+                        <block type="math_random_int"></block>
+                        <block type="math_random_float"></block>
+                    </category>
+                    
+                    <!-- Text -->
+                    <category name="text" colour="150">
+                        <block type="text"></block>
+                        <block type="text_join"></block>
+                        <block type="text_append"></block>
+                        <block type="text_length"></block>
+                        <block type="text_isEmpty"></block>
+                        <block type="text_indexOf"></block>
+                        <block type="text_charAt"></block>
+                        <block type="text_getSubstring"></block>
+                        <block type="text_changeCase"></block>
+                        <block type="text_trim"></block>
+                        <block type="text_print"></block>
+                        <block type="text_prompt_ext"></block>
+                        <block type="text_prompt"></block>
+                    </category>
+                    <sep></sep>
+                    
+                    <!-- Functions -->
+                    <category name="functions" colour="290" custom="PROCEDURE"></category>
+                    
+                    <!-- Variables -->
+                    <category name="variables" colour="330" custom="VARIABLE"></category>
+                </xml>
+                
+                <!-- Blockly Injection Script -->
+                <script>
+                    var workspace = Blockly.inject('main',
+                        {toolbox: document.getElementById('toolbox'),
+                        zoom:
+                            {controls: true,
+                            wheel: true,
+                            startScale: 1.0,
+                            maxScale: 3,
+                            minScale: 0.3,
+                            sqcaleSpeed: 1.2},
+                        trashcan: true});
+                </script>
+            </div>
+    </body>
 </html>
